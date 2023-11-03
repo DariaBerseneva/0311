@@ -12,14 +12,13 @@ SOURCES += \
     currentconditionsdisplay.cpp \
     main.cpp \
     mainwindow.cpp \
+    statisticsdisplay.cpp \
     weatherdata.cpp
 
 HEADERS += \
-    DisplayElement.h \
     currentconditionsdisplay.h \
     mainwindow.h \
-    observer.h \
-    subject.h \
+    statisticsdisplay.h \
     weatherdata.h
 
 FORMS += \

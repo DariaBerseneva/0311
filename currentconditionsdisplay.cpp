@@ -1,9 +1,7 @@
 #include "currentconditionsdisplay.h"
 
-CurrentConditionsDisplay::CurrentConditionsDisplay(Subject *wd, QWidget *parent) : QWidget(parent)
+CurrentConditionsDisplay::CurrentConditionsDisplay(QWidget *parent) : QWidget(parent)
 {
-    this->weatherData = wd;
-    wd->registerObserver(this);
     lcdTemp = new QLCDNumber(this);
     lcdTemp->setGeometry(100,100, 300, 50);
     lcdTemp->show();
@@ -24,10 +22,11 @@ void CurrentConditionsDisplay::display()
     lcdPres->display(pressure);
 }
 
-void CurrentConditionsDisplay::update(float t, float h, float p)
+void CurrentConditionsDisplay::on_update(float t, float h, float p)
 {
     this->temperature = t;
     this->humidity = h;
     this->pressure = p;
     this->display();
 }
+
